@@ -1,0 +1,19 @@
+{
+  "name": "acf/example",
+  "title": "Block - Example",
+  "description": "Example ACF Gutenberg block.",
+  "style": [
+    "ourmaincss"
+  ],
+  "category": "formatting",
+  "icon": "layout",
+  "keywords": [
+    "example",
+    "acf"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "example.php"
+  },
+  "align": "full"
+}
