@@ -6,9 +6,7 @@
                 <?php get_template_part('/views/components/component', 'logo'); ?>
             </div>
             <div>
-                <?php get_template_part('/views/components/component', 'contact', [
-                    'colour' => 'red'
-                ]); ?>
+                <?php get_template_part('/views/components/component', 'contact'); ?>
                 <?php wp_nav_menu(); ?>
             </div>
         </div>

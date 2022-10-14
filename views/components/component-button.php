@@ -38,13 +38,13 @@ $openingTag = implode(' ', [$tag, $buttonType, $href, $target]);
 $colourClasses = 'text-white bg-red hover:bg-black';
 
 if ($colour === 'black') {
-    $colourClasses = 'text-white bg-black hover:bg-red';
+    $colourClasses = 'text-white bg-black hover:bg-crimson hover:shadow-md';
 }
 ?>
 
 <<?= $openingTag; ?>
     class="<?= $colourClasses; ?>
-        inline-flex items-center text-center text-lg font-semibold uppercase appearance-none rounded-md px-11 py-[10px] transition-colors border-0"
+        inline-flex items-center text-center text-lg font-semibold uppercase appearance-none rounded-md px-11 py-[10px] transition-colors border-0 opac"
 >
     <?php if ($emailIcon) { ?>
         <span class="mr-2"><?= file_get_contents(get_template_directory() . '/src/assets/email.svg'); ?></span>
