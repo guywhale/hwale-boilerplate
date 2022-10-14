@@ -13,7 +13,7 @@ if (!$logoDark) {
 ?>
 
 <a href="<?= get_home_url(); ?>">
-    <img class="block"
+    <img class="block w-24 sm:w-32 lg:w-auto"
         src="<?= $logoDark['url'] ?>"
         alt="<?= $logoDark['alt'] ?>"
         width="<?= $logoDark['width'] ?>"
