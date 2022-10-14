@@ -14,6 +14,9 @@ module.exports = {
         'sans': ['Noto Sans', ...defaultTheme.fontFamily.sans],
         'display': ['Noto Sans', 'sans-serif'],
         'body': ['Noto Sans', 'sans-serif'],
+      },
+      fontSize: {
+        '1.5xl': '1.375rem',
       }
     }
   },
