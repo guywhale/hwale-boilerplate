@@ -44,7 +44,7 @@ if ($colour === 'black') {
 
 <<?= $openingTag; ?>
     class="<?= $colourClasses; ?>
-        inline-flex items-center text-lg font-semibold uppercase appearance-none rounded-md px-[30px] py-[10px] transition-colors border-0"
+        inline-flex items-center text-center text-lg font-semibold uppercase appearance-none rounded-md px-11 py-[10px] transition-colors border-0"
 >
     <?php if ($emailIcon) { ?>
         <span class="mr-2"><?= file_get_contents(get_template_directory() . '/src/assets/email.svg'); ?></span>
