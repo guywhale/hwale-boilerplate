@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply text-black;
+@layer base {
+  body {
+    @apply text-black;
+  }
+}
+
+.menu-item {
+  @apply relative px-3 xl:px-5 lg:py-[10px];
+}
+
+.menu-item:first-child {
+  @apply lg:pl-0;
+}
+
+.menu-item:first-child,
+.menu-item:nth-child(4) {
+  @apply lg:border-r border-r-grey-dark;
+}
+
+.menu-item:last-child {
+  @apply lg:pr-0;
+}
+
+.menu-item a {
+  @apply transition underline-offset-4 hover:underline;
 }
