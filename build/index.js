@@ -32,26 +32,6 @@ function ExampleReactComponent() {
 
 /***/ }),
 
-/***/ "./src/scripts/Person.js":
-/*!*******************************!*\
-  !*** ./src/scripts/Person.js ***!
-  \*******************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-class Person {
-  constructor(name) {
-    this.name = name;
-    this.greet();
-  }
-  greet() {
-    console.log(`Hello, my name is ${this.name}.`);
-  }
-}
-/* harmony default export */ __webpack_exports__["default"] = (Person);
-
-/***/ }),
-
 /***/ "react":
 /*!************************!*\
   !*** external "React" ***!
@@ -163,16 +143,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "react-dom");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _scripts_Person__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/Person */ "./src/scripts/Person.js");
-/* harmony import */ var _scripts_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scripts/ExampleReactComponent */ "./src/scripts/ExampleReactComponent.js");
+/* harmony import */ var _scripts_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/ExampleReactComponent */ "./src/scripts/ExampleReactComponent.js");
 
 
 
+// import Person from "./scripts/Person";
 
-
-const person1 = new _scripts_Person__WEBPACK_IMPORTED_MODULE_3__["default"]("Brad");
 if (document.querySelector("#render-react-example-here")) {
-  react_dom__WEBPACK_IMPORTED_MODULE_2___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_scripts_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_4__["default"], null), document.querySelector("#render-react-example-here"));
+  react_dom__WEBPACK_IMPORTED_MODULE_2___default().render((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_scripts_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_3__["default"], null), document.querySelector("#render-react-example-here"));
 }
 }();
 /******/ })()

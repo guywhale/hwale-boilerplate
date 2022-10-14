@@ -1,0 +1,17 @@
+{
+  "name": "acf/hero",
+  "title": "Block - Hero",
+  "description": "Hero header ACF Gutenberg block.",
+  "editorStyle": [ "file:../../../../../build/index.css" ],
+  "style": [ "file:../../../../../build/index.css" ],
+  "category": "formatting",
+  "icon": "layout",
+  "keywords": ["hero", "acf"],
+  "acf": {
+      "mode": "auto",
+      "renderTemplate": "hero.php"
+  },
+  "supports": {
+    "align": false
+  }
+}
