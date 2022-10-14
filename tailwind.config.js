@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: ["./**/*.php", "./src/**/*.js"],
   theme: {
@@ -7,6 +9,13 @@ module.exports = {
         DEFAULT: '1rem',
       }
     },
+    extend: {
+      fontFamily: {
+        'sans': ['Noto Sans', ...defaultTheme.fontFamily.sans],
+        'display': ['Noto Sans', 'sans-serif'],
+        'body': ['Noto Sans', 'sans-serif'],
+      }
+    }
   },
   plugins: [require("@tailwindcss/typography")]
 }
