@@ -5,19 +5,12 @@
             <div class="flex items-center">
                 <?php get_template_part('/views/components/component', 'logo'); ?>
             </div>
-
             <div>
-                <?php get_template_part('/views/components/component', 'button', [
-                    'type' => 'link',
-                    'label' => 'Email',
-                    'url' => 'https://guywhale.com',
-                    'newTab' => true,
-                    'colour' => 'red',
-                    'emailIcon' => true
+                <?php get_template_part('/views/components/component', 'contact', [
+                    'colour' => 'red'
                 ]); ?>
+                <?php wp_nav_menu(); ?>
             </div>
-
-            <?php wp_nav_menu(); ?>
         </div>
     </div>
 </header>
