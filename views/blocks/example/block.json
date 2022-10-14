@@ -8,8 +8,10 @@
   "icon": "layout",
   "keywords": ["example", "acf"],
   "acf": {
-      "mode": "preview",
+      "mode": "auto",
       "renderTemplate": "example.php"
   },
-  "align": "full"
+  "supports": {
+    "align": false
+  }
 }
