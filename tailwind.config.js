@@ -10,6 +10,18 @@ module.exports = {
       }
     },
     extend: {
+      colors: {
+        'black': {
+          DEFAULT: '#1A1A1A',
+        },
+        'grey': {
+          DEFAULT: '#F2F2F2',
+          'dark': '#707070',
+          'light': '#EDEDED',
+        },
+        'crimson': '#570E22',
+        'red': '#D12417',
+      },
       fontFamily: {
         'sans': ['Noto Sans', ...defaultTheme.fontFamily.sans],
         'display': ['Noto Sans', 'sans-serif'],
