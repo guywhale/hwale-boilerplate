@@ -11,7 +11,7 @@ get_header(); ?>
         while (have_posts()) {
             the_post();
 
-            $partialsPath = '/src/views/partials/content';
+            $partialsPath = '/views/partials/content';
 
             if (get_template_part($partialsPath, get_post_type())) {
                 get_template_part($partialsPath, get_post_type());

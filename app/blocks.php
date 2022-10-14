@@ -9,7 +9,7 @@
 add_action('init', 'Hwale\App\register_acf_blocks');
 function register_acf_blocks()
 {
-    $blocksPath = __DIR__ . '/../src/views/blocks';
+    $blocksPath = __DIR__ . '/../views/blocks';
 
     if (!is_dir($blocksPath)) {
         return;

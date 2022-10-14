@@ -7,7 +7,7 @@ get_header(); ?>
         while (have_posts()) {
             the_post();
 
-            $partialsPath = '/src/views/partials/content';
+            $partialsPath = '/views/partials/content';
 
             if (get_template_part($partialsPath . '-single-' . get_post_type() . 'php')) {
                 get_template_part($partialsPath . '-single-' . get_post_type() . 'php');
