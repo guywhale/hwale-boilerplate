@@ -24,7 +24,9 @@ $excerpt = get_the_excerpt($id);
         <?php if ($title) { ?>
             <h2 class="flex items-center text-lg font-bold leading-6 uppercase text-red">
                 <span class="pr-8"><?= $title; ?></span>
-                <span class="fill-red group-hover:animate-swing-right"><?= file_get_contents(get_template_directory() . '/src/assets/arrow-r.svg'); ?></span>
+                <span class="fill-red group-hover:animate-swing-right">
+                    <?= file_get_contents(get_template_directory() . '/src/assets/arrow-r.svg'); ?>
+                </span>
             </h2>
         <?php } ?>
 
