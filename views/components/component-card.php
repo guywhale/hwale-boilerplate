@@ -20,7 +20,7 @@ $excerpt = get_the_excerpt($id);
             ]);
         } ?>
     </div>
-    <div class="flex-auto px-5 py-7 bg-grey-light">
+    <div class="flex-auto px-5 pt-5 pb-7 bg-grey-light">
         <?php if ($title) { ?>
             <h2 class="flex items-center text-lg font-bold leading-6 uppercase text-red">
                 <span class="pr-8"><?= $title; ?></span>
@@ -28,7 +28,7 @@ $excerpt = get_the_excerpt($id);
             </h2>
         <?php } ?>
 
-        <div class="pt-5 text-base">
+        <div class="pt-5 text-sm+">
             <?= $excerpt; ?>
         </div>
     </div>
