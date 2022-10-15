@@ -26,5 +26,5 @@
 }
 
 .menu-item a {
-  @apply transition underline-offset-4 hover:underline;
+  @apply transition duration-200 ease-in-out underline-offset-4 hover:underline;
 }
