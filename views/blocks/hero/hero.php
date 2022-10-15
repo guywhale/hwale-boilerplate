@@ -15,11 +15,13 @@ $image = get_field('image') ?: null;
     <?php } ?>
     <div class="absolute inset-0 flex items-end w-full h-full">
         <div class="container">
-            <?php if ($title) { ?>
-                <h1 class="inline-block text-white uppercase font-extrabold text-1.5xl bg-red py-[18px] px-[30px]">
-                    <?= $title; ?>
-                </h1>
-            <?php } ?>
+            <div class="wrapper">
+                <?php if ($title) { ?>
+                    <h1 class="inline-block text-white uppercase font-extrabold text-1.5xl bg-red py-[18px] px-[30px]">
+                        <?= $title; ?>
+                    </h1>
+                <?php } ?>
+            </div>
         </div>
     </div>
 </section>

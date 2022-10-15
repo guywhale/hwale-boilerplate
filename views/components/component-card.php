@@ -16,7 +16,7 @@ $excerpt = get_the_excerpt($id);
     <div class="h-[17.5rem] overflow-hidden bg-grey-light">
         <?php if (get_the_post_thumbnail($id)) {
             echo get_the_post_thumbnail($id, 'full', [
-                'class' => 'block w-full h-full group-hover:scale-110 transition-transform duration-500'
+                'class' => 'block w-full h-full object-cover group-hover:scale-110 transition-transform duration-500'
             ]);
         } ?>
     </div>
