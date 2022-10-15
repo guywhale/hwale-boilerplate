@@ -1,23 +1,5 @@
 <?php
 
-// Support custom "anchor" values.
-$anchor = '';
-
-if (!empty($block['anchor'])) {
-    $anchor = 'id="' . esc_attr($block['anchor']) . '"';
-}
-
-// Create class attribute allowing for custom "className" and "align" values.
-$className = 'block-example';
-
-if (!empty($block['className'])) {
-    $className .= ' ' . $block['className'];
-}
-
-if (!empty($block['align'])) {
-    $className .= ' align' . $block['align'];
-}
-
 $title = get_field('title') ?: null;
 $subtitle = get_field('subtitle') ?: null;
 $text = get_field('text') ?: null;
@@ -25,7 +7,7 @@ $image = get_field('image') ?: null;
 
 ?>
 
-<section data-block-example <?= $anchor; ?> class="<?= esc_attr($class_name); ?> bg-black py-12">
+<section class="py-12 bg-black block-example">
     <div class="container mx-auto text-white">
         <div class="flex flex-wrap -mx-4">
             <?php if ($title) { ?>
