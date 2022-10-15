@@ -31,6 +31,7 @@ module.exports = {
         'body': ['Noto Sans', 'sans-serif'],
       },
       fontSize: {
+        'sm+': '0.9375rem',
         '1.5xl': '1.375rem',
         '2.5xl': '1.75rem',
       },
