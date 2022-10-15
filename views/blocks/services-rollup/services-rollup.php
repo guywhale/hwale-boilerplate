@@ -8,7 +8,7 @@ if (!$services) {
 
 ?>
 
-<section block-services-rollup class="pt-4 py-19">
+<section data-block-services-rollup class="pt-4 py-19">
     <div class="container">
         <div class="flex flex-wrap -mx-3">
             <div class="flex flex-wrap wrapper">
