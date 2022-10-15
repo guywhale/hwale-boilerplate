@@ -5,7 +5,7 @@ $image = get_field('image') ?: null;
 
 ?>
 
-<section class="relative block-hero">
+<section data-block-hero class="relative">
     <?php if ($image) { ?>
         <img class="object-cover lg:max-h-[500px] 2xl:max-h-full"
             src="<?= $image['url']; ?>"

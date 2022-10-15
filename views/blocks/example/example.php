@@ -7,7 +7,7 @@ $image = get_field('image') ?: null;
 
 ?>
 
-<section class="py-12 bg-black block-example">
+<section data-block-example class="py-12 bg-black">
     <div class="container mx-auto text-white">
         <div class="flex flex-wrap -mx-4">
             <?php if ($title) { ?>
