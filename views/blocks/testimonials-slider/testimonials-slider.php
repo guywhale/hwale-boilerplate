@@ -11,11 +11,11 @@ if (!$testimonials) {
 <section data-block-testimonials-slider class="pt-8 pb-9 bg-grey-light">
     <div class="container">
         <div class="wrapper">
-            <div class="flex flex-row -mx-3">
-                <div class="w-[10%] px-3">
+            <div class="flex flex-col justify-start -mx-3 lg:flex-row">
+                <div class="lg:w-[10%] px-3 mb-4 lg:mb-0">
                     <?= file_get_contents(get_template_directory() . '/src/assets/testimonial.svg'); ?>
                 </div>
-                <div class="w-4/5 px-3">
+                <div class="px-3 lg:w-4/5">
                     <div data-testimonials-swiper class="swiper lg:max-w-[87.3%]">
                         <div class="swiper-wrapper pb-9">
                             <?php foreach ($testimonials as $testimonial) {
