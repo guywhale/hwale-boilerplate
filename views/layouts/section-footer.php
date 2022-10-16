@@ -1,3 +1,30 @@
-<footer class="py-4 mt-4 border-t">
-  <div class="max-w-4xl px-4 mx-auto text-xs text-gray-400">Your footer content here.</div>
+<footer class="text-sm font-medium text-white bg-black-normal pb-9">
+  <div class="container">
+    <div class="border-t border-black wrapper">
+        <div class="flex flex-wrap pb-10">
+            <div class="w-1/2">
+                <?php get_template_part('/views/components/component', 'contact', [
+                    'colour' => 'red',
+                ]); ?>
+            </div>
+            <div class="w-1/2">
+                <?php get_template_part('/views/components/component', 'social'); ?>
+            </div>
+        </div>
+        <div class="flex flex-wrap justify-between pb-5">
+            <div class="">
+                <?php get_template_part('/views/components/component-footer', 'contact'); ?>
+            </div>
+            <div class="">
+                <?php get_template_part('/views/components/component-footer', 'text'); ?>
+            </div>
+        </div>
+        <div class="flex justify-between">
+            <p>Copyright &copy; IHS UK LTD. All rights reserved</p>
+            <a href="https://wearehdk.com/" target="_blank">
+                <img src="<?= get_template_directory_uri() . '/src/assets/made-by-HdK.png'; ?>" alt="made by HdK">
+            </a>
+        </div>
+    </div>
+  </div>
 </footer>

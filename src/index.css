@@ -10,7 +10,7 @@
 
 @layer utilities {
   .wrapper {
-    @apply mx-auto 2xl:w-5/6;
+    @apply mx-auto 2xl:w-[1366px];
   }
 }
 
@@ -47,7 +47,7 @@
 }
 
 .swiper-pagination-bullet {
-  @apply block w-5 h-5 mx-1 transition-colors bg-white rounded-full cursor-pointer hover:bg-crimson;
+  @apply block w-5 h-5 mx-[6px] transition-colors bg-white rounded-full cursor-pointer hover:bg-crimson;
 }
 
 .swiper-pagination-bullet-active {

@@ -1,21 +1,31 @@
 <?php
 
 $logos = get_field('logos', 'options') ?? null;
-$logoDark = '';
 
-if ($logos) {
-    $logoDark = $logos['dark'];
-}
-
-if (!$logoDark) {
+if (!$logos) {
     return;
 }
+
+$logo = $logos['dark'];
+
+[
+    'colour' => $colour,
+    'classes' => $classes
+] = $args;
+
+if ($colour === 'light') {
+    $logo = $logos['light'];
+}
+
+
 ?>
 
-<a href="<?= get_home_url(); ?>">
+<a class="<?= $classes; ?>"
+    href="<?= get_home_url(); ?>"
+>
     <img class="block w-24 sm:w-32 lg:w-auto"
-        src="<?= esc_attr($logoDark['url']);?>"
-        alt="<?= esc_attr($logoDark['alt']) ?>"
-        width="<?= esc_attr($logoDark['width']) ?>"
-        height="<?= esc_attr($logoDark['height'])?>">
+        src="<?= esc_attr($logo['url']);?>"
+        alt="<?= esc_attr($logo['alt']) ?>"
+        width="<?= esc_attr($logo['width']) ?>"
+        height="<?= esc_attr($logo['height'])?>">
 </a>
