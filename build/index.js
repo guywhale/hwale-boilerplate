@@ -348,7 +348,17 @@ var __webpack_exports__ = {};
 // }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Enqueue JS if appropriate elements exists.
+
   // Enqueue Testimonial Slider if element exists.
+  if (document.querySelector('nav')) {
+    const navs = document.querySelectorAll('nav');
+    __webpack_require__.e(/*! import() */ "src_scripts_MobileNav_js").then(__webpack_require__.bind(__webpack_require__, /*! ./scripts/MobileNav */ "./src/scripts/MobileNav.js")).then(MobileNav => {
+      [...navs].map(el => MobileNav.default(el));
+    }).catch(err => {
+      console.log(err);
+    });
+  }
   if (document.querySelector('[data-testimonials-swiper]')) {
     const sliders = document.querySelectorAll('[data-testimonials-swiper]');
     Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_swiper_swiper_min_css-node_modules_swiper_swiper_esm_js"), __webpack_require__.e("src_scripts_TestimonialsSlider_js-node_modules_swiper_swiper_min_css")]).then(__webpack_require__.bind(__webpack_require__, /*! ./scripts/TestimonialsSlider */ "./src/scripts/TestimonialsSlider.js")).then(TestimonialsSlider => {
