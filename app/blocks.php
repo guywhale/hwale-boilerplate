@@ -4,9 +4,9 @@
  * Register ACF Gutenberg blocks by scanning blocks directory
  */
 
- namespace Hwale\App;
+ namespace Hwale;
 
-add_action('init', 'Hwale\App\register_acf_blocks');
+add_action('init', __NAMESPACE__ . '\register_acf_blocks');
 function register_acf_blocks()
 {
     $blocksPath = __DIR__ . '/../views/blocks';

@@ -4,9 +4,9 @@
  * Add theme support features
  */
 
-namespace Hwale\App;
+namespace Hwale;
 
-add_action('after_setup_theme', 'Hwale\App\boilerplate_add_support');
+add_action('after_setup_theme', __NAMESPACE__ . '\boilerplate_add_support');
 function boilerplate_add_support()
 {
     add_theme_support('title-tag');

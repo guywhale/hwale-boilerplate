@@ -4,7 +4,7 @@
  * Sets up View controller.
  */
 
-namespace Hwale\App\Controllers;
+namespace Hwale\Controllers;
 
 class View
 {
