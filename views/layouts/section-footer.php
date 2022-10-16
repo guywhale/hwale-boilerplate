@@ -1,7 +1,7 @@
 <footer class="text-sm font-medium text-white bg-black-normal pb-9">
   <div class="container">
     <div class="wrapper">
-        <div class="flex flex-wrap pb-10">
+        <div class="flex flex-wrap pb-10 -mx-4 sm:mx-0">
             <div class="w-full lg:w-1/2">
                 <?php get_template_part('/views/components/component', 'contact', [
                     'colour' => 'red',
