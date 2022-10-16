@@ -1,4 +1,4 @@
-<header class="bg-grey">
+<header class="hidden bg-grey sm:block">
     <div class="w-full h-2 bg-red"></div>
     <div class="container">
         <div class="wrapper">
