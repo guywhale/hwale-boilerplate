@@ -12,7 +12,7 @@ $excerpt = get_the_excerpt($id);
 
 ?>
 
-<a href="<?= $permalink; ?>" class="flex flex-col w-1/3 group <?= $padding; ?>">
+<a href="<?= $permalink; ?>" class="flex flex-col w-full max-w-[438px] md:w-1/2 mx-auto md:mx-0 py-4 md:py-3 md:max-w-full lg:py-0 lg:w-1/3 group <?= $padding; ?>">
     <div class="h-[17.5rem] overflow-hidden bg-grey-light">
         <?php if (get_the_post_thumbnail($id)) {
             echo get_the_post_thumbnail($id, 'full', [
