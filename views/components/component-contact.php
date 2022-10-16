@@ -2,9 +2,10 @@
 
 $colour = 'transparent';
 $buttonColour = 'red';
-$styleClasses = '';
-$titleClasses = 'text-2.5xl mr-8';
-$iconClasses = 'mr-4';
+$buttonVisibility = 'hidden md:inline';
+$styleClasses = 'flex-wrap';
+$titleClasses = 'hidden sm:block text-xl lg:text-2.5xl md:mr-4 lg:mr-8';
+$iconClasses = 'hidden sm:block mr-4';
 $svgColour = 'fill-black';
 
 [
@@ -21,6 +22,7 @@ if ($colour === 'red') {
     $titleClasses = 'text-center sm:text-start w-full sm:w-auto text-xl sm:text-2.5xl lg:text-2xl 2xl:text-2.5xl mb-4 sm:mb-0 mr-4 md:mr-8';
     $buttonColour = 'black';
     $svgColour = 'fill-white';
+    $buttonVisibility = '';
 }
 
 ?>
@@ -35,12 +37,14 @@ if ($colour === 'red') {
         </p>
     <?php } ?>
 
-    <?php get_template_part('/views/components/component', 'button', [
-        'type' => 'link',
-        'label' => 'Email',
-        'url' => 'mailto:' . $email,
-        'newTab' => true,
-        'colour' => $buttonColour,
-        'emailIcon' => true
-    ]); ?>
+    <span class="<?= $buttonVisibility; ?>">
+        <?php get_template_part('/views/components/component', 'button', [
+            'type' => 'link',
+            'label' => 'Email',
+            'url' => 'mailto:' . $email,
+            'newTab' => true,
+            'colour' => $buttonColour,
+            'emailIcon' => true
+        ]); ?>
+    </span>
 </div>
