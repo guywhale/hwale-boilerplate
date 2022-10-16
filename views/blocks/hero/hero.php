@@ -17,7 +17,7 @@ $image = get_field('image') ?: null;
         <div class="container">
             <div class="wrapper">
                 <?php if ($title) { ?>
-                    <h1 class="inline-block text-white uppercase font-extrabold text-1.5xl bg-red py-[18px] px-[30px]">
+                    <h1 class="inline-block text-white uppercase font-extrabold tetx-xl sm:text-1.5xl bg-red py-[18px] px-[30px]">
                         <?= $title; ?>
                     </h1>
                 <?php } ?>
