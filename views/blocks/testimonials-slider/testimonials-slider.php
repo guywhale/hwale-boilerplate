@@ -8,7 +8,7 @@ if (!$testimonials) {
 
 ?>
 
-<section data-block-testimonials-slider class="pt-8 py-19 bg-grey-light">
+<section data-block-testimonials-slider class="pt-8 pb-9 bg-grey-light">
     <div class="container">
         <div class="wrapper">
             <div class="flex flex-row -mx-3">
@@ -17,7 +17,7 @@ if (!$testimonials) {
                 </div>
                 <div class="w-4/5 px-3">
                     <div data-testimonials-swiper class="swiper lg:max-w-[87.3%]">
-                        <div class="swiper-wrapper">
+                        <div class="swiper-wrapper pb-9">
                             <?php foreach ($testimonials as $testimonial) {
                                 $quote = get_field('quote', $testimonial->ID);
                                 $name = get_field('name', $testimonial->ID);
