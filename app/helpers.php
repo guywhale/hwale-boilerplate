@@ -16,7 +16,7 @@ namespace Hwale;
  * @return void
  **/
 
-function get(string $type = null, string $fileName = null, array $options = [])
+function get(string $type = null, string $fileName = null, array $options = []): void
 {
     if (!$type) {
         throw new \Exception("Please specify a type of template to get. A type must have a corresponding directory in /views/.", 1);
@@ -46,7 +46,7 @@ function get(string $type = null, string $fileName = null, array $options = [])
  * @return string
  **/
 
-function getSVG(string $fileName = null)
+function getSVG(string $fileName = null): string
 {
     if (!$fileName) {
         throw new \Exception("You must specify a filename for the SVG file. You must use the '.svg' extension.", 1);
