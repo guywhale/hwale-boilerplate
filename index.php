@@ -15,8 +15,6 @@ get_header(); ?>
 
             if (get('partial', 'content-' . get_post_type())) {
                 get('partial', 'content-' . get_post_type());
-            } else {
-                get('partial', 'content');
             }
         }
     } ?>

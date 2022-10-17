@@ -11,8 +11,6 @@ get_header(); ?>
 
             if (get('partial', 'content-single-' . get_post_type())) {
                 get('partial', 'content-single-' . get_post_type());
-            } else {
-                get('partial', 'content-single');
             }
         }
     } ?>
