@@ -60,7 +60,3 @@ function getSVG(string $fileName = null): string
 
     return $svg;
 }
-
-
-// Trim get_the_content() with wp_trim_words
-// Get featured image alt
