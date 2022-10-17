@@ -13,6 +13,7 @@ namespace Hwale;
  * @param string $fileName Type of template to get.
  * @param string $fileName Filename of component without '.php' extension.
  * @param array $options Any arguments you wish to pass into the component.
+ * @return void
  **/
 
 function get(string $type = null, string $fileName = null, array $options = [])
@@ -51,11 +52,11 @@ function getSVG(string $fileName = null)
         throw new \Exception("You must specify a filename for the SVG file. You must use the '.svg' extension.", 1);
     }
 
-    if (!is_file(get_template_directory() . '/src/assets/' . $fileName)) {
+    if (!is_file(get_template_directory() . "/src/assets/{$fileName}")) {
         throw new \Exception("Sorry, this file doesn't exist in /src/assets/.", 1);
     }
 
-    $svg = file_get_contents(get_template_directory() . '/src/assets/' . $fileName);
+    $svg = file_get_contents(get_template_directory() . "/src/assets/{$fileName}");
 
     return $svg;
 }
