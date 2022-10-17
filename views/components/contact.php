@@ -1,5 +1,6 @@
 <?php
 
+use function Hwale\get;
 use function Hwale\getSVG;
 
 $colour = 'transparent';
@@ -40,13 +41,13 @@ if ($colour === 'red') {
     <?php } ?>
 
     <span class="<?= $buttonVisibility; ?>">
-        <?php get_template_part('/views/components/component', 'button', [
+        <?php get('component', 'button', [
             'type' => 'link',
             'label' => 'Email',
             'url' => 'mailto:' . $email,
             'newTab' => true,
             'colour' => $buttonColour,
             'emailIcon' => true
-        ]); ?>
+        ]) ?>
     </span>
 </div>

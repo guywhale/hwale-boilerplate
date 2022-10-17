@@ -1,5 +1,7 @@
 <?php
 
+use function Hwale\get;
+
 $services = get_field('services') ?: null;
 
 if (!$services) {
@@ -13,7 +15,7 @@ if (!$services) {
         <div class="flex flex-wrap -mx-3">
             <div class="flex flex-wrap wrapper">
                 <?php foreach ($services as $service) {
-                    get_template_part('/views/components/component', 'card', ['id' => $service->ID]);
+                    get('component', 'card-post', ['id' => $service->ID]);
                 }
                 ?>
             </div>

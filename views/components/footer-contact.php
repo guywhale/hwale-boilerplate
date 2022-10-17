@@ -1,13 +1,16 @@
 <?php
 
+use function Hwale\get;
+
 $address = get_field('address', 'option') ?: null;
 $phoneNumber = get_field('telephone', 'option') ?: null;
 $email = get_field('email', 'option') ?: null;
 
-get_template_part('/views/components/component', 'logo', [
+get('component', 'logo', [
     'colour' => 'light',
     'classes' => 'inline-block mb-5'
 ]); ?>
+
 <?php if ($address) { ?>
     <div class="mb-5"><?= $address; ?></div>
 <?php } ?>

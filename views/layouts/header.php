@@ -1,3 +1,8 @@
+<?php
+
+use function Hwale\get;
+
+?>
 <header class="bg-grey">
     <div class="w-full h-2 bg-red"></div>
     <div class="container">
@@ -5,9 +10,7 @@
             <div class="flex justify-between">
                 <div class="relative flex items-center justify-center py-8">
                     <div class="absolute top-0 w-0 h-0 border-transparent border-t-[15px] border-x-[15px] md:border-t-[20px] border-t-red md:border-x-[20px] border-b-0"></div>
-                    <?php get_template_part('/views/components/component', 'logo', [
-                        'colour' => 'dark',
-                    ]); ?>
+                    <?php get('component', 'logo', ['colour' => 'dark']); ?>
                 </div>
                 <div class="flex flex-col items-end justify-center py-8 sm:justify-start sm:items-center lg:items-end sm:flex-row lg:flex-col">
                     <button class="relative z-30 flex flex-col justify-between appearance-none w-9 sm:order-2 h-7 cursor lg:hidden"
@@ -19,7 +22,7 @@
                     </button>
 
                     <span class="sm:mr-8 sm:order-1 lg:mr-0">
-                        <?php get_template_part('/views/components/component', 'contact'); ?>
+                        <?php get('component', 'contact'); ?>
                     </span>
 
                     <span class="order-1 lg:order-2">

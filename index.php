@@ -1,5 +1,7 @@
 <?php
 
+use function Hwale\get;
+
 get_header(); ?>
 
 <main id="main" class="main">
@@ -11,12 +13,10 @@ get_header(); ?>
         while (have_posts()) {
             the_post();
 
-            $partialsPath = '/views/partials/content';
-
-            if (get_template_part($partialsPath, get_post_type())) {
-                get_template_part($partialsPath, get_post_type());
+            if (get('partial', 'content-' . get_post_type())) {
+                get('partial', 'content-' . get_post_type());
             } else {
-                get_template_part($partialsPath . '.php');
+                get('partial', 'content');
             }
         }
     } ?>

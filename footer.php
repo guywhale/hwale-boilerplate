@@ -1,5 +1,7 @@
-        <?php get_template_part('/views/layouts/section', 'footer'); ?>
+<?php
 
-        <?php wp_footer(); ?>
+        Hwale\get('layout', 'footer');
+
+        wp_footer(); ?>
     </body>
 </html>

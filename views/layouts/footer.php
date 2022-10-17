@@ -1,22 +1,25 @@
+<?php
+
+use function Hwale\get;
+
+?>
 <footer class="text-sm font-medium text-white bg-black-normal pb-9">
   <div class="container">
     <div class="wrapper">
         <div class="flex flex-wrap pb-10 -mx-4 sm:mx-0">
             <div class="w-full lg:w-1/2">
-                <?php get_template_part('/views/components/component', 'contact', [
-                    'colour' => 'red',
-                ]); ?>
+                <?php get('component', 'contact', ['colour' => 'red']); ?>
             </div>
             <div class="w-full lg:w-1/2">
-                <?php get_template_part('/views/components/component', 'social'); ?>
+                <?php get('component', 'social'); ?>
             </div>
         </div>
         <div class="flex flex-wrap justify-center text-center pb-7 lg:pb-5 lg:text-left lg:justify-between lg:flex-nowrap">
             <div class="pb-8 lg:pb-0 lg:pr-40 xl:pr-0">
-                <?php get_template_part('/views/components/component-footer', 'contact'); ?>
+                <?php get('component', 'footer-contact'); ?>
             </div>
             <div class="">
-                <?php get_template_part('/views/components/component-footer', 'text'); ?>
+                <?php get('component', 'footer-text'); ?>
             </div>
         </div>
         <div class="flex flex-wrap items-center justify-center sm:flex-nowrap sm:justify-between">
