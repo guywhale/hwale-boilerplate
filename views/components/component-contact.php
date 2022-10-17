@@ -1,5 +1,7 @@
 <?php
 
+use function Hwale\getSVG;
+
 $colour = 'transparent';
 $buttonColour = 'red';
 $buttonVisibility = 'hidden md:inline';
@@ -28,7 +30,7 @@ if ($colour === 'red') {
 ?>
 
 <div class="flex items-center <?= $styleClasses; ?>">
-    <span class="<?= $iconClasses; ?> <?= $svgColour; ?>"><?= file_get_contents(get_template_directory() . '/src/assets/phone.svg'); ?></span>
+    <span class="<?= $iconClasses; ?> <?= $svgColour; ?>"><?= getSVG('phone.svg'); ?></span>
     <?php if ($phoneNumber) { ?>
         <p class="<?= $titleClasses; ?> font-semibold ">
             Call us on <a href="tel:<?= $phoneNumber; ?>" target="_blank" class="transition-all underline-offset-4 hover:underline">

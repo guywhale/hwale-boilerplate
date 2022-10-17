@@ -1,5 +1,7 @@
 <?php
 
+use function Hwale\getSVG;
+
 $type = 'link';
 $tag = 'a';
 $buttonType = '';
@@ -47,7 +49,7 @@ if ($colour === 'black') {
         inline-flex items-center text-center text-lg font-semibold uppercase appearance-none rounded-md px-11 py-[10px] transition-colors duration-200 ease-in-out border-0"
 >
     <?php if ($emailIcon) { ?>
-        <span class="mr-2"><?= file_get_contents(get_template_directory() . '/src/assets/email.svg'); ?></span>
+        <span class="mr-2"><?= getSVG('email.svg'); ?></span>
     <?php } ?>
     <span><?= $label; ?></span>
 </<?= $tag ?>>

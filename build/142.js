@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkbrads_boilerplate_theme=self.webpackChunkbrads_boilerplate_theme||[]).push([[142],{142:function(e,l,a){a.r(l);var t=a(257);l.default=e=>{new t.ZP(e,{loop:!0,slidesPerView:1,modules:[t.pt,t.tl],pagination:{clickable:!0,el:".swiper-pagination",type:"bullets"},autoplay:!0})}}}]);

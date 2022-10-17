@@ -1,5 +1,7 @@
 <?php
 
+use function Hwale\getSVG;
+
 $testimonials = get_field('testimonials') ?: null;
 
 if (!$testimonials) {
@@ -14,7 +16,7 @@ if (!$testimonials) {
             <div class="flex flex-col justify-start -mx-3 lg:flex-row">
                 <div class="lg:w-[10%] px-3 mb-4 lg:mb-0">
                     <span class="block w-20 lg:w-auto">
-                        <?= file_get_contents(get_template_directory() . '/src/assets/testimonial.svg'); ?>
+                        <?= getSVG('testimonial.svg'); ?>
                     </span>
                 </div>
                 <div class="px-3 lg:w-4/5">
