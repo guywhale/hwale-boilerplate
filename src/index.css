@@ -4,10 +4,15 @@
 
 @layer base {
   html {
+    /* 10px */
+    /* font-size: 62.5%; */
     overflow: auto;
   }
   
   body {
+    /* 16px */
+    /* font-size: 1.6rem; */
+    overflow-x: hidden;
     @apply overflow-x-hidden text-black;
   }
 }
@@ -15,6 +20,16 @@
 @layer utilities {
   .wrapper {
     @apply mx-auto 2xl:w-[1366px];
+  }
+
+  .exception-msg {
+    padding: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    text-decoration: none;
+    text-transform: none;
+    background-color: orangered;
+    color: white;
   }
 }
 
