@@ -11,6 +11,7 @@
     "file:../../../../../build/index.css"
   ],
   "category": "common",
+  "textdomain": "hwale",
   "icon": "layout",
   "keywords": [
     "example",
