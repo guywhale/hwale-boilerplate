@@ -8,7 +8,7 @@ $image = get_field('image') ?: null;
 ?>
 
 <section data-block-example class="py-12 bg-black">
-    <div class="container mx-auto text-white">
+    <div class="container text-white">
         <div class="flex flex-wrap -mx-4">
             <?php if ($title) { ?>
                 <h2 class="w-full mb-4 text-2xl text-center md:text-4xl"><?= $title; ?></h2>
