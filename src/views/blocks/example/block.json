@@ -1,10 +1,12 @@
 {
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
   "name": "acf/example",
   "title": "Block - Example",
   "description": "Example ACF Gutenberg block.",
   "editorStyle": [ "file:../../../../../build/index.css" ],
   "style": [ "file:../../../../../build/index.css" ],
-  "category": "formatting",
+  "category": "design",
   "icon": "layout",
   "keywords": ["example", "acf"],
   "acf": {
