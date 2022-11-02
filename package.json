@@ -4,14 +4,8 @@
   "description": "A boilerplate WordPress theme.",
   "main": "build/app.js",
   "scripts": {
-    "preview": "npm-run-all --parallel sync wpstart tailwindwatch",
-    "sync": "browser-sync start -p 'myexample.local' --files '**/*.php' 'build/*.js' 'build/*.css'",
-    "buildwp": "wp-scripts build",
-    "build": "npm-run-all --sequential buildwp tailwindbuild",
-    "wpstart": "wp-scripts start",
-    "start": "npm-run-all --parallel wpstart tailwindwatch",
-    "tailwindbuild": "tailwindcss -i ./src/app.css -o ./build/app.css --minify",
-    "tailwindwatch": "tailwindcss -i ./src/app.css -o ./build/app.css --watch --minify",
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,9 +19,6 @@
   },
   "homepage": "https://github.com/guywhale/hwale-boilerplate#readme",
   "devDependencies": {
-    "@wordpress/scripts": "24.4.0",
-    "browser-sync": "^2.27.10",
-    "npm-run-all": "^4.1.5",
-    "tailwindcss": "^3.2.1"
+    "@wordpress/scripts": "24.4.0"
   }
 }

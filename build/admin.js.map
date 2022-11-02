@@ -1,1 +1,0 @@
-{"version":3,"file":"admin.js","mappings":";;;;;AAAAA,OAAO,CAACC,GAAG,CAAC,qBAAqB,CAAC,C","sources":["webpack://hwale/./src/admin.js"],"sourcesContent":["console.log('Hello from admin.js');\n"],"names":["console","log"],"sourceRoot":""}

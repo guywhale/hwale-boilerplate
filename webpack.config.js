@@ -12,6 +12,5 @@ module.exports = {
 	...defaultConfig,
 	entry: {
 		'app': path.resolve( process.cwd(), 'src', 'app.js' ),
-		'admin': path.resolve( process.cwd(), 'src', 'admin.js' ),
 	},
 }
