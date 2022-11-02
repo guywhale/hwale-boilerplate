@@ -5,10 +5,6 @@ use function Hwale\get;
 get_header(); ?>
 
 <main id="main" class="main">
-    <!-- example react component -->
-    <!-- <div id="render-react-example-here"></div> -->
-    <!-- end example react component -->
-
     <?php if (have_posts()) {
         while (have_posts()) {
             the_post();

@@ -1,1 +1,0 @@
-{"version":3,"file":"app.js","mappings":";;;;;AAAA","sources":["webpack://hwale/./src/app.js"],"sourcesContent":["console.log('Hello from app.js');\n"],"names":[],"sourceRoot":""}
