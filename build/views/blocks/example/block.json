@@ -10,7 +10,7 @@
   "style": [
     "file:../../../../../build/index.css"
   ],
-  "category": "design",
+  "category": "common",
   "icon": "layout",
   "keywords": [
     "example",
