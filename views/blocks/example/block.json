@@ -15,6 +15,13 @@
     "renderTemplate": "example.php"
   },
   "supports": {
-    "align": false
+    "align": true,
+    "alignWide": true
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    }
   }
 }
