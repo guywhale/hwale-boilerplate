@@ -9,7 +9,7 @@ namespace Hwale\Controllers;
 class Controller
 {
     /** @var String $templateDir Location of view template files */
-    protected $templateDir = __DIR__ . '../../src/views/';
+    protected $templateDir = __DIR__ . '../../views/';
 
     /**
      * Constructor for View class
