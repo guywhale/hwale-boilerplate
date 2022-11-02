@@ -6,12 +6,12 @@
   "description": "Example ACF Gutenberg block.",
   "editorStyle": [ "file:../../../../../build/index.css" ],
   "style": [ "file:../../../../../build/index.css" ],
-  "category": "design",
+  "category": "common",
   "icon": "layout",
   "keywords": ["example", "acf"],
   "acf": {
-      "mode": "auto",
-      "renderTemplate": "example.php"
+    "mode": "auto",
+    "renderTemplate": "example.php"
   },
   "supports": {
     "align": false
