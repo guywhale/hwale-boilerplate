@@ -5,13 +5,13 @@
   "main": "build/app.js",
   "scripts": {
     "preview": "npm-run-all --parallel sync wpstart tailwindwatch",
-    "sync": "browser-sync start -p 'hwale-boilerplate.lndo.site' --files '**/*.php' 'dist/*.js' 'dist/*.css'",
+    "sync": "browser-sync start -p 'hwale-boilerplate.lndo.site' --files '**/*.php' 'build/*.js' 'build/*.css'",
     "buildwp": "wp-scripts build",
     "build": "npm-run-all --sequential buildwp tailwindbuild",
     "wpstart": "wp-scripts start",
     "start": "npm-run-all --parallel wpstart tailwindwatch",
-    "tailwindbuild": "tailwindcss -i ./src/app.css -o ./dist/app.css --minify",
-    "tailwindwatch": "tailwindcss -i ./src/app.css -o ./dist/app.css --watch --minify",
+    "tailwindbuild": "tailwindcss -i ./src/app.css -o ./build/app.css --minify",
+    "tailwindwatch": "tailwindcss -i ./src/app.css -o ./build/app.css --watch --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

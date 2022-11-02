@@ -2,6 +2,7 @@
  * External Dependencies
  */
  const path = require( 'path' );
+ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
  /**
   * WordPress Dependencies
@@ -11,9 +12,17 @@
 module.exports = {
 	...defaultConfig,
 	entry: {
-		'app': path.resolve( process.cwd(), 'src', 'app.js' ),
+		'app': path.resolve(process.cwd(), 'src', 'app.js'),
 	},
   output: {
-    clean: false
-  }
+    path: path.resolve(__dirname, 'build'),
+  },
+  plugins: [
+    new CleanWebpackPlugin({
+      verbose: true,
+      cleanOnceBeforeBuildPatterns: [
+        '!/app.css'
+      ]
+    }),
+  ],
 }
