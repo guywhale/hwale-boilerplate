@@ -23,7 +23,7 @@ function subGet(string $type = null, string $fileName = null, array $options = [
     // Permitted types as string for Exception messages
     $allowedTypesStr = implode(', ', $allowedTypes);
     // Path to /views/ dir as a string. Maintains consistency across Exception messages.
-    $viewsPath = '/src/views/';
+    $viewsPath = '/views/';
 
     if (!$type) {
         throw new \Exception("Please specify a type of template to get. Permitted types are: {$allowedTypesStr}. A type must have a corresponding directory in {$viewsPath}.");

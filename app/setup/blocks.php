@@ -9,7 +9,7 @@
 add_action('init', __NAMESPACE__ . '\registerAcfBlocks');
 function registerAcfBlocks()
 {
-    $blocksPath = __DIR__ . '/../../src/views/blocks';
+    $blocksPath = __DIR__ . '/../../views/blocks';
 
     if (!is_dir($blocksPath)) {
         return;
