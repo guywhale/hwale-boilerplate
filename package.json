@@ -1,0 +1,23 @@
+{
+  "name": "hwale",
+  "version": "1.0.0",
+  "description": "A boilerplate WordPress theme.",
+  "main": "build/app.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guywhale/hwale-boilerplate.git"
+  },
+  "author": "Guy Whale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guywhale/hwale-boilerplate/issues"
+  },
+  "homepage": "https://github.com/guywhale/hwale-boilerplate#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "24.4.0"
+  }
+}
