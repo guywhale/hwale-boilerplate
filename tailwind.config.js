@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./.php", "./**/*.php", "./src/**/*.js"],
+  content: ["./*.php", "./**/*.php", "./src/**/*.js", "!!**/vendors/**!!"],
   theme: {
     container: {
       center: true,
