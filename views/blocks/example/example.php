@@ -16,11 +16,11 @@ use Hwale\Controllers\Button;
     <div class="container text-white">
         <div class="flex flex-wrap -mx-4">
             <?php if ($title) { ?>
-                <h2 class="w-full mb-4 text-2xl text-center md:text-4xl"><?= $title; ?></h2>
+                <h2 class="w-full mb-4 text-center"><?= $title; ?></h2>
             <?php } ?>
 
             <?php if ($subtitle) { ?>
-                <p class="w-full mb-10 text-xl text-center md:text-2xl"><?= $title; ?></p>
+                <p class="w-full mb-10 text-center h4"><?= $title; ?></p>
             <?php } ?>
 
             <div class="w-full px-4 text-center lg:w-1/2">
