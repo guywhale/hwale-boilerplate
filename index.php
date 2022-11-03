@@ -9,8 +9,9 @@ get_header(); ?>
         while (have_posts()) {
             the_post();
 
-            if (Page::init()) {
-                Page::init();
+            // Full, unaliased class name must be used in class_exists()
+            if (class_exists('Hwale\Controllers\Page')) {
+                new Page();
             }
         }
     } ?>

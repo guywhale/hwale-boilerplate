@@ -6,7 +6,7 @@
 
 namespace Hwale\Controllers;
 
-abstract class Blocks extends Controller
+abstract class Blocks extends ControllerStatic
 {
     // Set view type to 'block';
     public static function setViewType()

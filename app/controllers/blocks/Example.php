@@ -11,7 +11,7 @@ class Example extends Blocks
     }
 
     // Get data specific to view
-    protected static function getData()
+    protected static function setData()
     {
         self::$data = [
             'title' => get_field('title') ?: null,
@@ -21,12 +21,19 @@ class Example extends Blocks
         ];
     }
 
-    // Set arguments and pass to render method
+    /**
+     * Constructor
+     *
+     * Set arguments and pass to render method.
+     * Must be a static method as renderTemplate in block.json
+     * does not accept new Class() instances.
+     *
+     **/
     public static function init()
     {
         self::setViewType();
         self::setViewFile();
-        self::getData();
+        self::setData();
         self::render(self::$viewType, self::$viewFile, self::$data);
     }
 }

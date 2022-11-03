@@ -14,5 +14,5 @@ use Hwale\Controllers\Header;
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
-        <?php Header::init(); ?>
+        <?php new Header(); ?>
 

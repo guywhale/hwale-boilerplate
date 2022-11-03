@@ -2,7 +2,7 @@
 
 use Hwale\Controllers\Footer;
 
-        Footer::init();
+        new Footer();
 
         wp_footer(); ?>
     </body>

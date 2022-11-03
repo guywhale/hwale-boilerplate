@@ -9,14 +9,14 @@ namespace Hwale\Controllers;
 abstract class Components extends Controller
 {
     // Set view type to 'component';
-    public static function setViewType()
+    public function setViewType()
     {
-        self::$viewType = 'component';
+        $this->viewType = 'component';
     }
 
-    protected static function render(string $viewType, string $viewFile, array $data = [])
+    protected function render(string $viewType, string $viewFile, array $data = [])
     {
-        $path = self::$viewsPath;
+        $path = $this->viewsPath;
         parent::render($viewType, $viewFile, $data);
 
         if (!is_file(get_template_directory() . "{$path}{$viewType}s/{$viewFile}.php")) {
