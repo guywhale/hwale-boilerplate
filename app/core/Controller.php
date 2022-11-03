@@ -39,9 +39,9 @@ abstract class Controller
      *
      * Used in child classes to set data arguments
      **/
-    protected function setData()
+    protected function setData($data = [])
     {
-        $this->data = [];
+        $this->data = $data;
     }
 
     /**
@@ -87,11 +87,11 @@ abstract class Controller
      * Set arguments and pass to render method
      *
      **/
-    public function __construct()
+    public function __construct($data = [])
     {
         $this->setViewType();
         $this->setViewFile();
-        $this->setData();
+        $this->setData($data);
 
         $this->render($this->viewType, $this->viewFile, $this->data);
     }

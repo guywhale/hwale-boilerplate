@@ -11,7 +11,7 @@ class Header extends Layouts
     }
 
     // Get data specific to view
-    protected function setData()
+    protected function setData($data = [])
     {
         $this->data = [
             'title' => get_the_title(),

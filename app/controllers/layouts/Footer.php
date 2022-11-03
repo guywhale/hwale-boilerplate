@@ -11,7 +11,7 @@ class Footer extends Layouts
     }
 
     // Get data specific to view
-    protected function setData()
+    protected function setData($data = [])
     {
         $this->data = [
             'copyright' => '© 2022 Guy Whale. All rights reserved.',

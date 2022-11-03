@@ -1,10 +1,13 @@
 <?php
 
+use Hwale\Controllers\Button;
+
 [
     'title' => $title,
     'subtitle' => $subtitle,
     'text' => $text,
     'image' => $image,
+    'button' => $button
 ] = $data;
 
 ?>
@@ -33,6 +36,13 @@
                 <?php if ($text) { ?>
                     <div class="prose text-white"><?= $text; ?></div>
                 <?php } ?>
+                <?php if ($button) {
+                    new Button([
+                        'label' => $button['title'],
+                        'href' => $button['url'],
+                        'target' => $button['target'],
+                    ]);
+                } ?>
             </div>
         </div>
     </div>

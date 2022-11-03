@@ -11,13 +11,14 @@ class Example extends Blocks
     }
 
     // Set data specific to view
-    protected function setData()
+    protected function setData($data = [])
     {
         $this->data = [
             'title' => get_field('title') ?: null,
             'subtitle' => get_field('subtitle') ?: null,
             'text' => get_field('text') ?: null,
             'image' => get_field('image') ?: null,
+            'button' => get_field('example_button') ?: null,
         ];
     }
 
