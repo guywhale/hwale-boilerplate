@@ -41,6 +41,7 @@ use Hwale\Controllers\Button;
                         'label' => $button['title'],
                         'href' => $button['url'],
                         'target' => $button['target'],
+                        'classes' => 'm-8',
                     ]);
                 } ?>
             </div>
