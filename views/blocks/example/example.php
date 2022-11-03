@@ -39,9 +39,9 @@ use Hwale\Controllers\Button;
                 <?php if ($button) { ?>
                     <div class="w-full m-8">
                         <?php new Button([
-                        'label' => $button['title'],
-                        'href' => $button['url'],
-                        'target' => $button['target'],
+                            'label' => $button['title'],
+                            'href' => $button['url'],
+                            'target' => $button['target'],
                         ]); ?>
                     </div>
                 <?php } ?>
