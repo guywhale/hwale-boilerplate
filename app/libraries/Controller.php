@@ -8,6 +8,9 @@ namespace Hwale\Controllers;
 
 abstract class Controller
 {
+    /** @var String $viewsPathPath to /views/ dir as a string. Maintains consistency across Exception messages. */
+    protected static $viewsPath = '/views/';
+
     /** @var String $viewType Type of view to get. */
     protected static $viewType = '';
 
@@ -40,38 +43,36 @@ abstract class Controller
      * @param string $viewType Type of view to get.
      * @param string $viewFile Name of view file.
      * @param array $data Arguments to pass to view template file.
-     * @return void
      * @throws Exception
      **/
-    protected static function render(string $viewType, string $viewFile, array $data = []): void
+    protected static function render(string $viewType, string $viewFile, array $data = [])
     {
         // Permitted types
         $allowedTypes = ['block', 'component', 'layout', 'partial'];
         // Permitted types as string for Exception messages
         $allowedTypesStr = implode(', ', $allowedTypes);
-        // Path to /views/ dir as a string. Maintains consistency across Exception messages.
-        $viewsPath = '/views/';
+        $path = self::$viewsPath;
 
         if (!$viewType) {
-            throw new \Exception("Please specify a type of template to get. Permitted types are: {$allowedTypesStr}. A type must have a corresponding directory in {$viewsPath}.");
+            throw new \Exception("Please specify a type of template to get. Permitted types are: {$allowedTypesStr}. A type must have a corresponding directory in {$path}.");
         }
 
         if (!in_array($viewType, $allowedTypes, true)) {
-            throw new \Exception("'{$viewType}' is not a permitted type. Permitted types are: {$allowedTypesStr}. A type must have a corresponding directory in {$viewsPath}.");
+            throw new \Exception("'{$viewType}' is not a permitted type. Permitted types are: {$allowedTypesStr}. A type must have a corresponding directory in {$path}.");
         }
 
-        if (!is_dir(get_template_directory() . "{$viewsPath}{$viewType}s")) {
-            throw new \Exception("The '{$viewType}' type does not have a corresponding directory in {$viewsPath}. Please create one and ensure the name is plual e.g. '{$viewsPath}{$viewType}s'.");
+        if (!is_dir(get_template_directory() . "{$path}{$viewType}s")) {
+            throw new \Exception("The '{$viewType}' type does not have a corresponding directory in {$path}. Please create one and ensure the name is plual e.g. '{$path}{$viewType}s'.");
         }
 
         if (!$viewFile) {
             throw new \Exception("You must specify a viewFile for the template file. Do not use '.php' extension.");
         }
 
-        if (!is_file(get_template_directory() . "{$viewsPath}{$viewType}s/{$viewFile}/{$viewFile}.php")) {
-            throw new \Exception("Sorry, {$viewFile}.php doesn't exist in {$viewsPath}{$viewType}s/.");
-        }
+        // if (!is_file(get_template_directory() . "{$path}{$viewType}s/{$viewFile}/{$viewFile}.php")) {
+        //     throw new \Exception("Sorry, {$viewFile}.php doesn't exist in {$path}{$viewType}s/.");
+        // }
 
-        include get_template_directory() . "{$viewsPath}{$viewType}s/{$viewFile}/{$viewFile}.php";
+        // include get_template_directory() . "{$path}{$viewType}s/{$viewFile}/{$viewFile}.php";
     }
 }

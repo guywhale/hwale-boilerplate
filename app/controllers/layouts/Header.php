@@ -16,6 +16,7 @@ class Header extends Layouts
         self::$data = [
             'title' => get_the_title(),
         ];
+
     }
 
     // Set arguments and pass to render method
@@ -24,6 +25,7 @@ class Header extends Layouts
         self::setViewType();
         self::setViewFile();
         self::getData();
+
         self::render(self::$viewType, self::$viewFile, self::$data);
     }
 }
