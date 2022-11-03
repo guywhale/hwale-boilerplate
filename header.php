@@ -1,3 +1,9 @@
+<?php
+
+use Hwale\Controllers\Header;
+
+?>
+
 <!DOCTYPE html>
 <html
 
@@ -8,5 +14,5 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
-        <?php Hwale\Controllers\Header::init(); ?>
+        <?php Header::init(); ?>
 

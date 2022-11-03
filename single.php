@@ -1,6 +1,6 @@
 <?php
 
-use function Hwale\get;
+use Hwale\Controllers\Post;
 
 get_header(); ?>
 
@@ -9,8 +9,8 @@ get_header(); ?>
         while (have_posts()) {
             the_post();
 
-            if (Hwale\Controllers\Post::init()) {
-                Hwale\Controllers\Post::init();
+            if (Post::init()) {
+                Post::init();
             }
         }
     } ?>
