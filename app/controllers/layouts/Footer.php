@@ -2,19 +2,19 @@
 
 namespace Hwale\Controllers;
 
-class Header extends Layouts
+class Footer extends Layouts
 {
     // Set view type to 'example';
     protected static function setViewFile()
     {
-        self::$viewFile = 'header';
+        self::$viewFile = 'footer';
     }
 
     // Get data specific to view
     protected static function getData()
     {
         self::$data = [
-            'title' => get_the_title(),
+            'copyright' => '© 2022 Guy Whale. All rights reserved.',
         ];
     }
 

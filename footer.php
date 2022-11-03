@@ -1,6 +1,6 @@
 <?php
 
-        Hwale\get('layout', 'footer');
+        \Hwale\Controllers\Footer::init();
 
         wp_footer(); ?>
     </body>
