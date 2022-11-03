@@ -7,13 +7,14 @@
     'target' => $target,
     'classes' => $classes,
     'label' => $label,
-    'rel' => $rel
+    'rel' => $rel,
+    'disabled' => $disabled,
 ] = $data;
 
 // echo '<pre style="color: #fff;">'; print_r($data); echo '</pre>';
 ?>
 
-<<?= $tag, ' class="button ' . $classes . '"', $type, $href, $target, $rel; ?>
+<<?= $tag, ' class="button ' . $classes . '"', $type, $href, $target, $rel, $disabled; ?>
 >
     <?= $label; ?>
 </<?= $tag; ?>>

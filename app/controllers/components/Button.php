@@ -2,6 +2,8 @@
 
 namespace Hwale\Controllers;
 
+use Exception;
+
 class Button extends Components
 {
     // Set view type to 'example';
@@ -10,8 +12,17 @@ class Button extends Components
         $this->viewFile = 'button';
     }
 
-    protected function cleanData($dataArr)
+    /**
+     * Clean Data
+     *
+     * Escape HTML attributes on strings before passing to view.
+     */
+    private function cleanData($dataArr)
     {
+        if (!$dataArr) {
+            throw new \Exception('Please pass a valid data array as an argument.');
+        }
+
         $cleanedArr = [];
 
         foreach ($dataArr as $key => $value) {
@@ -19,6 +30,64 @@ class Button extends Components
         }
 
         return $cleanedArr;
+    }
+
+    /**
+     * Add attributes
+     *
+     * Add text needed to wrap data values for button HTML attributes
+     */
+    private function addAttributes($dataArr)
+    {
+        if (!$dataArr) {
+            throw new \Exception('Please pass a valid data array as an argument.');
+        }
+
+        if ($dataArr['type']) {
+            $dataArr['type'] = "type=\"{$dataArr['type']}\"";
+        }
+
+        if ($dataArr['href']) {
+            $dataArr['href'] = "href=\"{$dataArr['href']}\"";
+        }
+
+        if ($dataArr['target']) {
+            $dataArr['target'] = "target=\"_{$dataArr['target']}\"";
+        }
+
+        if ($dataArr['rel']) {
+            $dataArr['rel'] = "rel=\"_{$this->data['rel']}\"";
+        }
+
+        if ($dataArr['disabled']) {
+            $dataArr['disabled'] = 'disabled';
+        }
+
+        return $dataArr;
+    }
+
+    /**
+     * Check tags data
+     *
+     * Ensure only permitted button HTML tags are passed to the view.
+     *
+     * @param array $data The array of button data.
+     * @return array
+     * @throws Exception
+     **/
+    private function checkTag($dataArr)
+    {
+        $permittedTags = ['a', 'button'];
+
+        if (!$dataArr) {
+            throw new \Exception('Please pass a valid data array as an argument.');
+        }
+
+        if (!in_array($dataArr['tag'], $permittedTags, true)) {
+            throw new \Exception('Only a and button html tags are permitted.');
+        }
+
+        return $dataArr;
     }
 
     // Get data specific to view
@@ -41,6 +110,7 @@ class Button extends Components
             'classes' => '',
             'label' => 'Add a label..',
             'rel' => '',
+            'disabled' => false
         ];
 
         // Clean data
@@ -53,22 +123,10 @@ class Button extends Components
             $newData = $this->cleanData($data);
             // Merge default data with new. New values will override defaults.
             $this->data = array_merge($defaultData, $newData);
-
-            if ($this->data['type']) {
-                $this->data['type'] = "type=\"{$this->data['type']}\"";
-            }
-
-            if ($this->data['href']) {
-                $this->data['href'] = "href=\"{$this->data['href']}\"";
-            }
-
-            if ($this->data['target']) {
-                $this->data['target'] = "target=\"_{$this->data['target']}\"";
-            }
-
-            if ($this->data['rel']) {
-                $this->data['rel'] = "rel=\"_{$this->data['rel']}\"";
-            }
+            // Check 'tag' argument is valid
+            $this->data = $this->checkTag($this->data);
+            // Set up attributes
+            $this->data = $this->addAttributes($this->data);
         }
     }
 }
