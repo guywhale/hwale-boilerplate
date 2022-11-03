@@ -1,9 +1,11 @@
 <?php
 
-$title = get_field('title') ?: null;
-$subtitle = get_field('subtitle') ?: null;
-$text = get_field('text') ?: null;
-$image = get_field('image') ?: null;
+[
+    'title' => $title,
+    'subtitle' => $subtitle,
+    'text' => $text,
+    'image' => $image,
+] = $data;
 
 ?>
 

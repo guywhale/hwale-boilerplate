@@ -12,7 +12,7 @@
   "keywords": ["example", "acf"],
   "acf": {
     "mode": "auto",
-    "renderTemplate": "example.php"
+    "renderCallback": "Hwale\\Controllers\\Example::init"
   },
   "supports": {
     "align": true,

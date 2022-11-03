@@ -13,3 +13,9 @@ require_once __DIR__ . '/helpers/getSVG.php';
 
 // Core libraries
 require_once __DIR__ . '/libraries/Controller.php';
+
+// Controllers
+require_once __DIR__ . '/controllers/Blocks.php';
+
+// Controllers - Blocks
+require_once __DIR__ . '/controllers/blocks/Example.php';
