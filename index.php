@@ -9,8 +9,8 @@ get_header(); ?>
         while (have_posts()) {
             the_post();
 
-            if (get('partial', 'content-' . get_post_type())) {
-                get('partial', 'content-' . get_post_type());
+            if (Hwale\Controllers\Page::init()) {
+                Hwale\Controllers\Page::init();
             }
         }
     } ?>

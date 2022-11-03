@@ -68,11 +68,5 @@ abstract class Controller
         if (!$viewFile) {
             throw new \Exception("You must specify a viewFile for the template file. Do not use '.php' extension.");
         }
-
-        // if (!is_file(get_template_directory() . "{$path}{$viewType}s/{$viewFile}/{$viewFile}.php")) {
-        //     throw new \Exception("Sorry, {$viewFile}.php doesn't exist in {$path}{$viewType}s/.");
-        // }
-
-        // include get_template_directory() . "{$path}{$viewType}s/{$viewFile}/{$viewFile}.php";
     }
 }
