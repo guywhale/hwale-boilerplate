@@ -8,7 +8,7 @@ use Hwale\Libraries\ThemeSupport;
 
 use function Hwale\autoloader;
 
-autoloader('libraries');
+autoloader('core');
 
 // Init
 new Assets();

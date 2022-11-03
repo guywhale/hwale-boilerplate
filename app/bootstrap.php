@@ -4,8 +4,8 @@
 require_once __DIR__ . '/helpers/autoloader.php';
 require_once __DIR__ . '/helpers/getSVG.php';
 
-// Core libraries
-require_once __DIR__ . '/libraries/_autoload.php';
+// Core setup files
+require_once __DIR__ . '/core/_autoload.php';
 
 // Controllers
 require_once __DIR__ . '/controllers/Layouts.php';
