@@ -36,14 +36,15 @@ use Hwale\Controllers\Button;
                 <?php if ($text) { ?>
                     <div class="prose text-white"><?= $text; ?></div>
                 <?php } ?>
-                <?php if ($button) {
-                    new Button([
+                <?php if ($button) { ?>
+                    <div class="w-full m-8">
+                        <?php new Button([
                         'label' => $button['title'],
                         'href' => $button['url'],
                         'target' => $button['target'],
-                        'classes' => 'm-8',
-                    ]);
-                } ?>
+                        ]); ?>
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </div>
