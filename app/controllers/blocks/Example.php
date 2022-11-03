@@ -5,15 +5,15 @@ namespace Hwale\Controllers;
 class Example extends Blocks
 {
     // Set view type to 'example';
-    protected static function setViewFile()
+    protected function setViewFile()
     {
-        self::$viewFile = 'example';
+        $this->viewFile = 'example';
     }
 
-    // Get data specific to view
-    protected static function setData()
+    // Set data specific to view
+    protected function setData()
     {
-        self::$data = [
+        $this->data = [
             'title' => get_field('title') ?: null,
             'subtitle' => get_field('subtitle') ?: null,
             'text' => get_field('text') ?: null,
@@ -22,18 +22,15 @@ class Example extends Blocks
     }
 
     /**
-     * Constructor
+     * Makes new instance of current class
      *
-     * Set arguments and pass to render method.
-     * Must be a static method as renderTemplate in block.json
-     * does not accept new Class() instances.
+     * As the renderCallback in block.json will not accept a 'new Class()' instantiation,
+     * we can cheat by using a static init() function that instatiates the class instead.
      *
-     **/
+     * 'Hwale\Controllers\Class::init' can then be used to render the block in block.json.
+     */
     public static function init()
     {
-        self::setViewType();
-        self::setViewFile();
-        self::setData();
-        self::render(self::$viewType, self::$viewFile, self::$data);
+        new self();
     }
 }
