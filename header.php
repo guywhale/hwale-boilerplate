@@ -8,5 +8,5 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
-        <?php Hwale\get('layout', 'header'); ?>
+        <?php Hwale\Controllers\Header::init(); ?>
 
