@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 @layer components {
+    .wp-core-ui .button,
     .button {
-        @apply text-white uppercase transition-colors bg-red-800 rounded hover:bg-gray-400 hover:text-black font-bold py-2 px-4 cursor-pointer;
+        @apply text-white uppercase transition-colors bg-red-800 rounded hover:bg-gray-400 hover:text-black font-bold py-2 px-4 cursor-pointer border-0 text-base ;
     }
 }
