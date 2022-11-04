@@ -177,5 +177,7 @@ use Hwale\Controllers\{$name};
         } else {
             $io->say("ERROR: $blockJson is not writable.");
         }
+
+        $io->yell("Block \"$name\" has now been set up.");
     }
 }
