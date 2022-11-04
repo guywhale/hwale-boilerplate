@@ -120,8 +120,6 @@ class $name extends Blocks
         $viewTemplate =
 "<?php
 
-use Hwale\Controllers\{$name};
-
 [] = \$data;
 
 ?>
