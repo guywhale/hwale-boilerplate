@@ -4,20 +4,67 @@ use Robo\Symfony\ConsoleIO;
 
 class RoboFile extends \Robo\Tasks
 {
-    public function makeBlock(ConsoleIO $io, $name)
+    /**
+     * Write contents to file
+     *
+     * Put the text contents of a template into a file
+     *
+     * @param string $file TName of the file.
+     * @param string $text Text to put into the file.
+     * @param string $success Name of the file to put in success message.
+     *
+     **/
+    private function putTextInFile(string $file, string $text, string $success, ConsoleIO $io)
     {
-        if (!$name) {
-            $io->say('ERROR: Please supply a block name. Name must use uppercase or upper camelcase e.g. Block or OtherBlock');
-            exit;
-        }
+        if (is_writable($file)) {
+            if (!$fp = fopen($file, 'a')) {
+                echo "Cannot open file ($file)";
+                exit;
+            }
 
-        /**
-         * Split CamelCase with hypen and make lowercase
-         * Used as view filename in $controllerTemplate.
-         */
+            // Write $controllerTemplate to our opened file.
+            if (fwrite($fp, $text) === false) {
+                echo "Cannot write to file ($file)";
+                exit;
+            }
+
+            fclose($fp);
+
+            $io->say("$success block controller successfully created.");
+        } else {
+            $io->say("ERROR: $file is not writable.");
+        }
+    }
+
+    /**
+     * Split CamelCase with hypen and make lowercase
+     * Used as view filename in $controllerTemplate.
+     */
+    private function lowerAndHyphentate(string $name)
+    {
+
         $lowerName = preg_replace('/(?<=\\w)(?=[A-Z])/', "-$1", $name);
         $lowerName = strtolower($lowerName);
+
+        return $lowerName;
+    }
+
+    /**
+     * Split CamelCase with space for block.json.
+     * Used as block name in $jsonTemplate.
+     */
+    private function spacedName(string $name)
+    {
+        $spacedName = preg_replace('/(?<=\\w)(?=[A-Z])/', " $1", $name);
+
+        return $spacedName;
+    }
+
+    private function makeBlockController(string $name, ConsoleIO $io)
+    {
+        $lowerName = $this->lowerAndHyphentate($name);
         $blockController = __DIR__ . "/app/controllers/blocks/$name.php";
+        $controllerSuccess = "$name.php";
 
         /**
          * Don't change spacing and indendation of template strings as we want them to
@@ -58,34 +105,18 @@ class $name extends Blocks
 ";
         // Create block controller
         fopen($blockController, "w+");
+        $this->putTextInFile($blockController, $controllerTemplate, $controllerSuccess, $io);
+    }
 
-        if (is_writable($blockController)) {
-            if (!$fp = fopen($blockController, 'a')) {
-                echo "Cannot open file ($blockController)";
-                exit;
-            }
-
-            // Write $controllerTemplate to our opened file.
-            if (fwrite($fp, $controllerTemplate) === false) {
-                echo "Cannot write to file ($blockController)";
-                exit;
-            }
-
-            fclose($fp);
-
-            $io->say("$name.php block controller successfully created.");
-        } else {
-            $io->say("ERROR: $blockController is not writable.");
-        }
-
-        /**
-         * Split CamelCase with space fro block.json.
-         * Used as block name in $jsonTemplate.
-         */
-        $spacedName = preg_replace('/(?<=\\w)(?=[A-Z])/', " $1", $name);
+    private function makeBlockView(string $name, ConsoleIO $io)
+    {
+        $lowerName = $this->lowerAndHyphentate($name);
+        $spacedName = $this->spacedName($name);
         $blockViewDir = __DIR__ . "/views/blocks/$lowerName/";
         $blockView = __DIR__ . "/views/blocks/$lowerName/$lowerName.php";
+        $viewSuccess = "$lowerName.php";
         $blockJson = __DIR__ . "/views/blocks/$lowerName/block.json";
+        $jsonSuccess = "block.json";
         $viewTemplate =
 "<?php
 
@@ -136,48 +167,22 @@ use Hwale\Controllers\{$name};
 
         // Make block view file
         fopen($blockView, "w+");
-
-        if (is_writable($blockView)) {
-            if (!$fp = fopen($blockView, 'a')) {
-                echo "Cannot open file ($blockView)";
-                exit;
-            }
-
-            // Write $viewTemplate to our opened file.
-            if (fwrite($fp, $viewTemplate) === false) {
-                echo "Cannot write to file ($blockView)";
-                exit;
-            }
-
-            fclose($fp);
-
-            $io->say("$lowerName.php block view successfully created.");
-        } else {
-            $io->say("ERROR: $blockView is not writable.");
-        }
+        $this->putTextInFile($blockView, $viewTemplate, $viewSuccess, $io);
 
         // Make block view JSON
         fopen($blockJson, "w+");
+        $this->putTextInFile($blockJson, $jsonTemplate, $jsonSuccess, $io);
+    }
 
-        if (is_writable($blockJson)) {
-            if (!$fp = fopen($blockJson, 'a')) {
-                echo "Cannot open file ($blockJson)";
-                exit;
-            }
-
-            // Write $jsonTemplate to our opened file.
-            if (fwrite($fp, $jsonTemplate) === false) {
-                echo "Cannot write to file ($blockJson)";
-                exit;
-            }
-
-            fclose($fp);
-
-            $io->say("block.json for block successfully created.");
-        } else {
-            $io->say("ERROR: $blockJson is not writable.");
+    public function makeBlock(ConsoleIO $io, $name)
+    {
+        if (!$name) {
+            $io->say('ERROR: Please supply a block name. Name must use uppercase or upper camelcase e.g. Block or NewBlock');
+            exit;
         }
 
+        $this->makeBlockController($name, $io);
+        $this->makeBlockView($name, $io);
         $io->yell("Block \"$name\" has now been set up.");
     }
 }
