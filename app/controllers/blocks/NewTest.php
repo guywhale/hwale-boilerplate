@@ -2,12 +2,12 @@
 
 namespace Hwale\Controllers;
 
-class Example extends Blocks
+class NewTest extends Blocks
 {
-    // Set view type to 'example';
+    // Set view type to 'new-test';
     protected function setViewFile()
     {
-        $this->viewFile = 'example';
+        $this->viewFile = 'new-test';
     }
 
     // Set data specific to view

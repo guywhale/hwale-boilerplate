@@ -11,7 +11,7 @@ use Hwale\Controllers\Button;
 ] = $data;
 
 ?>
-<section data-block-example class="py-12 bg-black">
+<section id="block-example" class="py-12 bg-black">
     <div class="container text-white">
         <div class="flex flex-wrap -mx-4">
             <?php if ($title) { ?>
