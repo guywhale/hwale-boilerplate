@@ -14,6 +14,7 @@ Navigate to the folder in the terminal and run:
 
 `npm install && composer install`
 
+
 ## Developing
 To compile code to the build folder, run:
 
@@ -25,11 +26,12 @@ If you prefer to have the browser update with your changes automatically, open *
       "sync": "browser-sync start -p 'hwale-boilerplate.lndo.site' --files '**/*.php' 'build/*.js' 'build/*.css'"
     }
 
-Change 'hwale-boilerplate.lndo.site' to your local URL.
+Change **'hwale-boilerplate.lndo.site'** to your local domain.
 
 To have the browser refresh automatically after each change, use:
 
 `npm run preview`
+
 
 ### Creating controller and corresponding view files automatically
 There are four **controller** types: **blocks**, **components**, **layouts** and **partials**.
@@ -50,6 +52,7 @@ New **controller** names must be passed in **UpperCamelCase** to Robo.
 
 #### Layouts
 `composer robo make:layout NewLayoutName`
+
 
 ## Deploying
 Before deploying run:
