@@ -1,7 +1,6 @@
 <?php
 
 use Hwale\Controllers\Button;
-use Hwale\Controllers\ExampleReactComponent;
 
 [
     'title' => $title,
@@ -13,7 +12,6 @@ use Hwale\Controllers\ExampleReactComponent;
 
 ?>
 <section class="py-12 bg-black block-example">
-    <?php new ExampleReactComponent(); ?>
     <div class="container text-white">
         <div class="flex flex-wrap -mx-4">
             <?php if ($title) { ?>
