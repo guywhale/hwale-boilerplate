@@ -14,7 +14,7 @@
 // echo '<pre style="color: #fff;">'; print_r($data); echo '</pre>';
 ?>
 
-<<?= $tag, ' class="button ' . $classes . '"', $type, $href, $target, $rel, $disabled; ?>
+<<?= $tag, ' class="component-button button ' . $classes . '"', $type, $href, $target, $rel, $disabled; ?>
 >
     <?= $label; ?>
 </<?= $tag; ?>>
