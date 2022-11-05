@@ -3,11 +3,11 @@
 namespace Hwale;
 
 /**
- * Echo SVGs from /src/assets
+ * Echo SVGs from /images/
  *
- * If specified SVG exists in /src/assets/images it will be returned as a string.
+ * If specified SVG exists in /images/ it will be returned as a string.
  *
- * @param string $fileName Name of the SVG in /src/assets/images
+ * @param string $fileName Name of the SVG in /images/
  * @return string
  **/
 
@@ -21,11 +21,11 @@ function subGetSVG(string $fileName = null): string
         throw new \Exception("The file must be an SVG file with an '.svg' extension.");
     }
 
-    if (!is_file(get_template_directory() . "/src/assets/images/{$fileName}")) {
-        throw new \Exception("Sorry, '{$fileName}' doesn't exist in /src/assets/.");
+    if (!is_file(get_template_directory() . "/images/{$fileName}")) {
+        throw new \Exception("Sorry, '{$fileName}' doesn't exist in /images/.");
     }
 
-    $svg = file_get_contents(get_template_directory() . "/src/assets/images/{$fileName}");
+    $svg = file_get_contents(get_template_directory() . "/images/{$fileName}");
 
     return $svg;
 }
