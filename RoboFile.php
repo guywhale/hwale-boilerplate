@@ -123,7 +123,7 @@ class $name extends Blocks
 [] = \$data;
 
 ?>
-<section id=\"block-$lowerName\" class=\"\">
+<section class=\"block-$lowerName\">
 </section>
 ";
         $jsonTemplate =
@@ -172,6 +172,63 @@ class $name extends Blocks
         $this->putTextInFile($blockJson, $jsonTemplate, $jsonSuccess, $io);
     }
 
+    private function makeController(string $name, string $type, ConsoleIO $io)
+    {
+        $capitalizedType = ucfirst($type);
+        $lowerName = $this->lowerAndHyphentate($name);
+        $controller = __DIR__ . "/app/controllers/$type/$name.php";
+        $controllerSuccess = "$name.php";
+
+        /**
+         * Don't change spacing and indendation of template strings as we want them to
+         * appear this way in the file we create.
+         */
+        $controllerTemplate =
+"<?php
+
+namespace Hwale\Controllers;
+
+class $name extends $capitalizedType
+{
+    // Set view type to '$lowerName';
+    protected function setViewFile()
+    {
+        \$this->viewFile = '$lowerName';
+    }
+
+    // Set data specific to view
+    protected function setData(\$data = [])
+    {
+        \$this->data = [];
+    }
+}
+";
+        // Create controller
+        fopen($controller, "w+");
+        $this->putTextInFile($controller, $controllerTemplate, $controllerSuccess, $io);
+    }
+
+    private function makeView(string $name, string $type, ConsoleIO $io)
+    {
+        $typeWithoutS = preg_replace('/\S(?!\S)/', "$1", $type);
+        $lowerName = $this->lowerAndHyphentate($name);
+        $viewDir = __DIR__ . "/views/$type/$lowerName/";
+        $view = __DIR__ . "/views/$type/$lowerName.php";
+        $viewSuccess = "$lowerName.php";
+        $viewTemplate =
+"<?php
+
+[] = \$data;
+
+?>
+<section class=\"$typeWithoutS-$lowerName\">
+</section>
+";
+        // Make view file
+        fopen($view, "w+");
+        $this->putTextInFile($view, $viewTemplate, $viewSuccess, $io);
+    }
+
     public function makeBlock(ConsoleIO $io, $name)
     {
         if (!$name) {
@@ -182,5 +239,29 @@ class $name extends Blocks
         $this->makeBlockController($name, $io);
         $this->makeBlockView($name, $io);
         $io->yell("Block \"$name\" has now been set up.");
+    }
+
+    public function makeComponent(ConsoleIO $io, $name)
+    {
+        if (!$name) {
+            $io->say('ERROR: Please supply a component name. Name must use uppercase or upper camelcase e.g. Component or NewComponent');
+            exit;
+        }
+
+        $this->makeController($name, 'components', $io);
+        $this->makeView($name, 'components', $io);
+        $io->yell("Component \"$name\" has now been set up.");
+    }
+
+    public function makeLayout(ConsoleIO $io, $name)
+    {
+        if (!$name) {
+            $io->say('ERROR: Please supply a layout name. Name must use uppercase or upper camelcase e.g. Layout or NewLayout');
+            exit;
+        }
+
+        $this->makeController($name, 'layouts', $io);
+        $this->makeView($name, 'layouts', $io);
+        $io->yell("Component \"$name\" has now been set up.");
     }
 }
