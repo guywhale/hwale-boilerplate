@@ -11,7 +11,8 @@ use Hwale\Controllers\Button;
 ] = $data;
 
 ?>
-<section class="py-12 bg-black block-example">
+<section class="py-12 bg-black wp-block-example">
+    <div data-example-script></div>
     <div class="container text-white">
         <div class="flex flex-wrap -mx-4">
             <?php if ($title) { ?>
