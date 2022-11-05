@@ -11,6 +11,7 @@ TailwindCSS and @wordpress/scripts are included for the frontend.
 Clone the folder into /wp-content/themes/.
 
 Navigate to the folder in the terminal and run:
+
 `npm install && composer install`
 
 ## Creating controller and corresponding view files automatically
