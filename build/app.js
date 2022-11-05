@@ -13,7 +13,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const ExampleReactComponent = () => {
-  // console.log('hello from ExampleReactComponent.js');
   const [clickCount, setClickCount] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "py-8 text-center text-white bg-gray-600",
@@ -29887,16 +29886,20 @@ var __webpack_exports__ = {};
   !*** ./src/app.js ***!
   \********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _js_components_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/components/ExampleReactComponent */ "./src/js/components/ExampleReactComponent.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _js_components_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/components/ExampleReactComponent */ "./src/js/components/ExampleReactComponent.js");
 
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  /**
+   * Example React Component
+   */
   if (document.querySelector('[data-example-react-component]')) {
-    react_dom__WEBPACK_IMPORTED_MODULE_2__.render((0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(_js_components_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_0__["default"], null), document.querySelector('[data-example-react-component]'));
+    const exampleReactComponents = document.querySelectorAll('[data-example-react-component]');
+    [...exampleReactComponents].map(el => react_dom__WEBPACK_IMPORTED_MODULE_1__.render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_js_components_ExampleReactComponent__WEBPACK_IMPORTED_MODULE_2__["default"], null), el));
   }
 });
 }();

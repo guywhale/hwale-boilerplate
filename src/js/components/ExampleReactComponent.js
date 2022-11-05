@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 
 const ExampleReactComponent = () => {
-  // console.log('hello from ExampleReactComponent.js');
   const [clickCount, setClickCount] = useState(0);
 
   return (
