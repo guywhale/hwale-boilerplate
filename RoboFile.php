@@ -212,7 +212,6 @@ class $name extends $capitalizedType
     {
         $typeWithoutS = preg_replace('/\S(?!\S)/', "$1", $type);
         $lowerName = $this->lowerAndHyphentate($name);
-        $viewDir = __DIR__ . "/views/$type/$lowerName/";
         $view = __DIR__ . "/views/$type/$lowerName.php";
         $viewSuccess = "$lowerName.php";
         $viewTemplate =
