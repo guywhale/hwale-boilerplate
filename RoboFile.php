@@ -2,6 +2,10 @@
 
 use Robo\Symfony\ConsoleIO;
 
+/**
+ * Config file for Robo commands.
+ * https://robo.li/
+ */
 class RoboFile extends \Robo\Tasks
 {
     /**
@@ -30,7 +34,7 @@ class RoboFile extends \Robo\Tasks
 
             fclose($fp);
 
-            $io->say("$success block controller successfully created.");
+            $io->say("$success successfully created.");
         } else {
             $io->say("ERROR: $file is not writable.");
         }
@@ -235,9 +239,11 @@ class $name extends $capitalizedType
             exit;
         }
 
+        $spacedName = $this->spacedName($name);
+
         $this->makeBlockController($name, $io);
         $this->makeBlockView($name, $io);
-        $io->yell("Block \"$name\" has now been set up.");
+        $io->yell("Block \"$spacedName\" has now been set up.");
     }
 
     public function makeComponent(ConsoleIO $io, $name)
@@ -247,9 +253,11 @@ class $name extends $capitalizedType
             exit;
         }
 
+        $spacedName = $this->spacedName($name);
+
         $this->makeController($name, 'components', $io);
         $this->makeView($name, 'components', $io);
-        $io->yell("Component \"$name\" has now been set up.");
+        $io->yell("Component \"$spacedName\" has now been set up.");
     }
 
     public function makeLayout(ConsoleIO $io, $name)
@@ -259,8 +267,10 @@ class $name extends $capitalizedType
             exit;
         }
 
+        $spacedName = $this->spacedName($name);
+
         $this->makeController($name, 'layouts', $io);
         $this->makeView($name, 'layouts', $io);
-        $io->yell("Component \"$name\" has now been set up.");
+        $io->yell("Component \"$spacedName\" has now been set up.");
     }
 }
