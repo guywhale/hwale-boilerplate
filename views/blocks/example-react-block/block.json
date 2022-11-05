@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "acf/example-react-block",
+    "title": "Block - Example React Block",
+    "description": "An block demonstrating how to integrate React into a project",
+    "editorStyle": [ "file:../../../../../build/index.css" ],
+    "style": [ "file:../../../../../build/index.css" ],
+    "category": "common",
+    "textdomain": "hwale",
+    "icon": "layout",
+    "keywords": ["example", "acf"],
+    "acf": {
+        "mode": "auto",
+        "renderCallback": "Hwale\\Controllers\\ExampleReactBlock::init"
+    },
+    "supports": {
+        "align": true,
+        "alignWide": true
+    },
+    "attributes": {
+        "align": {
+        "type": "string",
+        "default": "full"
+        }
+    }
+}
