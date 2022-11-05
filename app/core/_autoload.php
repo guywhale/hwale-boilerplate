@@ -1,10 +1,10 @@
 <?php
 
-use Hwale\Libraries\AcfConfig;
-use Hwale\Libraries\Assets;
-use Hwale\Libraries\Menus;
-use Hwale\Libraries\RegisterAcfBlocks;
-use Hwale\Libraries\ThemeSupport;
+use Hwale\Core\AcfConfig;
+use Hwale\Core\Assets;
+use Hwale\Core\Menus;
+use Hwale\Core\RegisterAcfBlocks;
+use Hwale\Core\ThemeSupport;
 
 use function Hwale\autoloader;
 

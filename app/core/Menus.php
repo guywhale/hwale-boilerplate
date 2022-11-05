@@ -4,7 +4,7 @@
  * Set up menus
  */
 
-namespace Hwale\Libraries;
+namespace Hwale\Core;
 
 class Menus
 {

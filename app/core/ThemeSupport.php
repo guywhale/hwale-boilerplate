@@ -4,7 +4,7 @@
  * Add theme support features
  */
 
-namespace Hwale\Libraries;
+namespace Hwale\Core;
 
 class ThemeSupport
 {

@@ -4,7 +4,7 @@
  * Configure ACF
  */
 
-namespace Hwale\Libraries;
+namespace Hwale\Core;
 
 class AcfConfig
 {

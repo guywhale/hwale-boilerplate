@@ -4,7 +4,7 @@
  * Register ACF Gutenberg blocks by scanning blocks directory
  */
 
-namespace Hwale\Libraries;
+namespace Hwale\Core;
 
 class RegisterAcfBlocks
 {

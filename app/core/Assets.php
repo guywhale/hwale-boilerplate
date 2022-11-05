@@ -4,7 +4,7 @@
  * Enqueue CSS & JS files
  */
 
-namespace Hwale\Libraries;
+namespace Hwale\Core;
 
 class Assets
 {
