@@ -19,7 +19,14 @@ To compile code to the build folder, run:
 
 `npm run start`
 
-If you prefer to have the browser update with your changes automatically, open **/package.json**, go to **scripts.sync** and change the URL to your local URL.
+If you prefer to have the browser update with your changes automatically, open **package.json**, go to:
+
+    "scripts": {
+      "sync": "browser-sync start -p 'hwale-boilerplate.lndo.site' --files 
+    '**/*.php' 'build/*.js' 'build/*.css'"
+    }
+
+Change 'hwale-boilerplate.lndo.site' to your local URL.
 
 To have the browser refresh automatically after each change, use:
 
