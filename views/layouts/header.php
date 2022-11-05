@@ -9,7 +9,7 @@ use function Hwale\getSVG;
 ?>
 
 <header class='py-16 text-center layout-header'>
-    <a href="/" class="inline-block w-20 h-auto transition-colors fill-red-800 hover:fill-gray-600">
+    <a href="/" class="inline-block w-20 h-auto transition-colors fill-gray-600 hover:fill-red-800">
         <?php getSVG('hwale.svg'); ?>
     </a>
     <?php if ($title) { ?>
