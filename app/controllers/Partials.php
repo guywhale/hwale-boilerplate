@@ -9,12 +9,12 @@ namespace Hwale\Controllers;
 abstract class Partials extends Controller
 {
     // Set view type to 'partial';
-    public function setViewType()
+    public function setViewType(): void
     {
         $this->viewType = 'partial';
     }
 
-    protected function render(string $viewType, string $viewFile, array $data = [])
+    protected function render(string $viewType, string $viewFile, array $data = []): void
     {
         $path = $this->viewsPath;
         parent::render($viewType, $viewFile, $data);
