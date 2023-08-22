@@ -1,0 +1,1 @@
+This is a completely new file to test how to use Git in NeoVim.
